@@ -25,3 +25,23 @@ header {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     width: 200px;
 }
+
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column; /* 横並び(row)から縦並び(column)に変更 */
+        align-items: center;
+    }
+    
+    .card {
+        width: 80%; /* 幅を画面いっぱいに広げる */
+    }
+}
+
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 変化をなめらかにする */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* 少し上に浮かす */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15); /* 影を濃くする */
+}
