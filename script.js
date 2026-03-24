@@ -5,7 +5,9 @@ const myButton = document.getElementById("btn");
 // 2. ボタンがクリックされた時の処理を決める
 myButton.addEventListener("click", () => {
     // 3. メッセージの中身を書き換える
-    messageText.textContent = "JavaScriptで書き換えました！";
+    const omikuji=['大吉', '中吉', '小吉'];
+    const randomOmikuji=omikuji[Math.fllor(Math.random()*omikuji.length)];
+    messageText.textContent = randomOmikuji;
     // ついでに色も変えてみる
     messageText.style.color = "red";
 });
