@@ -1,0 +1,54 @@
+body {
+    background-color: #f0f2f5;
+    font-family: sans-serif;
+    margin: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* コンテナの設定 */
+.container {
+    display: grid;
+    /* 3カラムのグリッドを作成（1frは等分割の意味） */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; /* カード同士の隙間 */
+    padding: 20px;
+}
+
+/* 通常のカード */
+.card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* 「成果物集」を横いっぱいに広げる設定 */
+.card.wide {
+    /* 1列目から4列目の手前（＝3列分すべて）まで結合 */
+    grid-column: 1 / 4;
+}
+
+/* スマホで見るときは1列に戻す（レスポンシブ対応） */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+    .card.wide {
+        grid-column: 1 / 2;
+    }
+}
+
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 変化をなめらかにする */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* 少し上に浮かす */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15); /* 影を濃くする */
+}
